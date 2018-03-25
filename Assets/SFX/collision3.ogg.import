@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/collision3.ogg-f16f9125b11148f9a770eb7a19ac4310.oggstr"
+
+[deps]
+
+source_file="res://Assets/SFX/collision3.ogg"
+source_md5="195637a9fabb8e2a80e60decfbac3821"
+
+dest_files=[ "res://.import/collision3.ogg-f16f9125b11148f9a770eb7a19ac4310.oggstr" ]
+dest_md5="26c528ff30bac5eb3d47f104c5aa514a"
+
+[params]
+
+loop=false
+loop_offset=0
