@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/GameManager.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Player01.tscn" type="PackedScene" id=2]
@@ -7,17 +7,22 @@
 [ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/FakeBall.tscn" type="PackedScene" id=6]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 450.274, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.25101, 221.482 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 192.612 )
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -45,7 +50,6 @@ position = Vector2( 35.8389, 187.706 )
 
 [node name="Barriers" type="StaticBody2D" parent="." index="3"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 3
 collision_mask = 1
@@ -58,11 +62,21 @@ _sections_unfolded = [ "Collision" ]
 [node name="Up" type="CollisionShape2D" parent="Barriers" index="0"]
 
 position = Vector2( 353.749, -10 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Down" type="CollisionShape2D" parent="Barriers" index="1"]
 
 position = Vector2( 353.749, 369.482 )
+shape = SubResource( 1 )
+
+[node name="Left" type="CollisionShape2D" parent="Barriers" index="2"]
+
+position = Vector2( -30, 180 )
+shape = SubResource( 2 )
+
+[node name="Right" type="CollisionShape2D" parent="Barriers" index="3"]
+
+position = Vector2( 676, 180 )
 shape = SubResource( 2 )
 
 [node name="Ball" parent="." index="4" groups=[
@@ -70,6 +84,7 @@ shape = SubResource( 2 )
 ] instance=ExtResource( 4 )]
 
 position = Vector2( 318.306, 179.51 )
+_sections_unfolded = [ "Collision", "Visibility" ]
 
 [node name="GUI" parent="." index="5" instance=ExtResource( 5 )]
 
@@ -107,7 +122,7 @@ shape = SubResource( 3 )
 
 [node name="FakeBall" parent="." index="8" instance=ExtResource( 6 )]
 
-visible = false
+modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 318, 179 )
 _sections_unfolded = [ "Collision", "Visibility" ]
 speed = 248

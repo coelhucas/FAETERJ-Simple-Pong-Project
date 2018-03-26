@@ -53,4 +53,4 @@ func _reset_ball():
 	$Ball.motion = Vector2($Ball.speed, $Ball.speed)
 	$Ball/Delay.start()
 	$FakeBall/Delay.start()
-	$FakeBall.motion = $Ball.motion
+	$FakeBall.motion = Vector2($Ball.speed - 2, $Ball.speed - 2)
