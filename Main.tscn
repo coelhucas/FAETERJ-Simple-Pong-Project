@@ -122,6 +122,7 @@ shape = SubResource( 3 )
 
 [node name="FakeBall" parent="." index="8" instance=ExtResource( 6 )]
 
+visible = false
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 318, 179 )
 _sections_unfolded = [ "Collision", "Visibility" ]

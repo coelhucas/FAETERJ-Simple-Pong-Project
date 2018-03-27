@@ -48,9 +48,9 @@ func update_gui():
 
 # Reseta as posições da bola e aciona o delay para recomeçar
 func _reset_ball():
-	$FakeBall.set_global_position($Ball.start_pos)
 	$Ball.set_global_position($Ball.start_pos)
+	$FakeBall.set_global_position($Ball.get_global_position())
 	$Ball.motion = Vector2($Ball.speed, $Ball.speed)
+	$FakeBall.motion = Vector2($Ball.speed - 2, $Ball.speed - 2)
 	$Ball/Delay.start()
 	$FakeBall/Delay.start()
-	$FakeBall.motion = Vector2($Ball.speed - 2, $Ball.speed - 2)
